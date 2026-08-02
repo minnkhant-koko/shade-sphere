@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -24,4 +25,15 @@ dependencyResolutionManagement {
 
 rootProject.name = "shade-sphere"
 include(":app")
- 
+include(":feature:news:api")
+include(":feature:news:impl")
+include(":feature:practice:api")
+include(":feature:practice:impl")
+include(":feature:reader:api")
+include(":feature:reader:impl")
+include(":feature:words:api")
+include(":feature:words:impl")
+include(":core:data")
+include(":core:database")
+include(":core:network")
+include(":core:model")
