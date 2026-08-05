@@ -1,0 +1,53 @@
+{
+  "promptVersion": 1,
+  "instructionTemplate": "Word: '{word}'\n{contextLine}Generate learning material in JSON for a language learner who marked this word as unfamiliar. Include: part of speech, a full definition, a one-line simple definition, up to 5 synonyms, up to 5 antonyms, verb forms if applicable, and 2-3 example sentences using the word naturally.",
+  "contextLineTemplate": "Context sentence (as highlighted by the reader): '{context}'\n",
+  "responseSchema": {
+    "type": "object",
+    "properties": {
+      "word": { "type": "string" },
+      "partOfSpeech": {
+        "type": "string",
+        "enum": ["noun", "verb", "adjective", "adverb", "other"]
+      },
+      "definition": { "type": "string" },
+      "definitionSimple": { "type": "string" },
+      "synonyms": {
+        "type": "array",
+        "items": { "type": "string" },
+        "maxItems": 5
+      },
+      "antonyms": {
+        "type": "array",
+        "items": { "type": "string" },
+        "maxItems": 5
+      },
+      "verbForms": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "base": { "type": "string" },
+          "pastSimple": { "type": "string" },
+          "pastParticiple": { "type": "string" },
+          "gerund": { "type": "string" },
+          "thirdPersonSingular": { "type": "string" }
+        }
+      },
+      "exampleSentences": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 2,
+        "maxItems": 3
+      }
+    },
+    "required": [
+      "word",
+      "partOfSpeech",
+      "definition",
+      "definitionSimple",
+      "synonyms",
+      "antonyms",
+      "exampleSentences"
+    ]
+  }
+}
