@@ -1,16 +1,17 @@
-package dev.konathankoester.model
+package dev.konathankoester.database.entities
 
-enum class WordSenseStatus { PENDING, READY, FAILED }
+import androidx.room.Entity
 
-data class WordSenseDataModel(
-    val id: String,
+@Entity(tableName = "word_sense")
+data class WordSenseEntity(
     val wordId: String,
+    val id: String,
     val partOfSpeech: String?,
     val definition: String?,
     val definitionSimple: String?,
     val synonyms: List<String>,
     val antonyms: List<String>,
-    val verbForms: Map<String, String>?,
+    val verbForms: VerbForm?,
     val exampleSentences: List<String>,
     val generatedFromContext: String?,
     val modelVersion: String?,

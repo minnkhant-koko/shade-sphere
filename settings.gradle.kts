@@ -24,6 +24,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "shade-sphere"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":feature:news:api")
 include(":feature:news:impl")
