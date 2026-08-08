@@ -3,7 +3,7 @@ package dev.konathankoester.ai_gemini.di
 import dev.konathankoester.ai_gemini.DefaultGeminiWordEnrichmentClient
 import dev.konathankoester.ai_gemini.GeminiWordEnrichmentClient
 import dev.konathankoester.ai_gemini.GeminiWordEnrichmentRequestBuilder
-import dev.konathankoester.ai_gemini.GeminiWordEnrichmentResponseMapper
+import dev.konathankoester.ai_gemini.mappers.GeminiWordEnrichmentResponseMapper
 import dev.konathankoester.ai_gemini.WordEnrichmentPromptLoader
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp

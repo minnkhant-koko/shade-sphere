@@ -1,6 +1,7 @@
 package dev.konathankoester.ai_gemini
 
 import dev.konathankoester.ai_gemini.ktor.GeminiApiClient
+import dev.konathankoester.ai_gemini.mappers.GeminiWordEnrichmentResponseMapper
 import dev.konathankoester.ai_gemini.util.GeminiResult
 import io.ktor.client.HttpClient
 import kotlinx.coroutines.sync.Mutex
@@ -29,7 +30,7 @@ internal class DefaultGeminiWordEnrichmentClient(
             )
         }
         val request = requestBuilder.build(word, contextSentence)
-        val response = client.generate(request)
-        return responseMapper.map(response)
+        val response = client.generate(request, "gemini-3.5-flash")
+        return responseMapper.map(response, "gemini-3.5-flash")
     }
 }

@@ -14,7 +14,7 @@ class GeminiApiClient(
 ) {
     suspend fun generate(
         request: GeminiGenerateContentRequest,
-        model: String = "gemini-3.5-flash",
+        model: String,
         generationMethod: String = "generateContent"
     ): HttpResponse {
         return httpClient.post("https://generativelanguage.googleapis.com/v1beta/models/$model:$generationMethod") {
