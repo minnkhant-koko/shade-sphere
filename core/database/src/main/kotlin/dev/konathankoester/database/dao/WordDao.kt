@@ -1,5 +1,6 @@
 package dev.konathankoester.database.dao
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -7,6 +8,7 @@ import dev.konathankoester.database.entities.WordEntity
 import dev.konathankoester.database.relations.WordWithContextSentence
 import kotlinx.coroutines.flow.Flow
 
+@Dao
 interface WordDao {
 
     @Query("select * from word where id = :id")

@@ -2,17 +2,23 @@ package dev.konathankoester.data
 
 import dev.konathankoester.ai_gemini.GeminiWordEnrichmentClient
 import dev.konathankoester.ai_gemini.util.GeminiResult
+import dev.konathankoester.database.dao.HighlightDao
 import dev.konathankoester.database.dao.WordDao
 import dev.konathankoester.database.dao.WordSenseDao
+import dev.konathankoester.database.entities.HighlightEntity
+import dev.konathankoester.database.entities.WordEntity
 import dev.konathankoester.database.entities.WordSenseStatus
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import java.util.UUID
+import kotlin.time.Clock
+import kotlin.time.ExperimentalTime
 
 internal class DefaultWordEnrichmentRepository(
     private val aiClient: GeminiWordEnrichmentClient,
     private val wordSenseDao: WordSenseDao,
     private val wordDao: WordDao,
+    private val highlightDao: HighlightDao,
     private val dispatcher: CoroutineDispatcher,
 ) : WordEnrichmentRepository {
 
@@ -44,4 +50,31 @@ internal class DefaultWordEnrichmentRepository(
             }
         }
     }
+
+    // TODO remove
+    @OptIn(ExperimentalTime::class)
+    override suspend fun seedTestWord(word: String, contextSentence: String): String =
+        withContext(dispatcher) {
+            val now = Clock.System.now().toEpochMilliseconds()
+            val wordId = UUID.randomUUID().toString()
+            wordDao.addWord(
+                WordEntity(
+                    id = wordId,
+                    text = word,
+                    language = "en",
+                    createdAt = now,
+                )
+            )
+            highlightDao.insert(
+                HighlightEntity(
+                    id = UUID.randomUUID().toString(),
+                    wordId = wordId,
+                    sourceSentence = contextSentence,
+                    sourceRef = null,
+                    resolvedSenseId = null,
+                    createdAt = now,
+                )
+            )
+            wordId
+        }
 }

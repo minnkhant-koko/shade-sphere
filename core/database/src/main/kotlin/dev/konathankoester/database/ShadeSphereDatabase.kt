@@ -11,6 +11,7 @@ import dev.konathankoester.database.dao.WordDao
 import dev.konathankoester.database.dao.WordSenseDao
 import dev.konathankoester.database.entities.HighlightEntity
 import dev.konathankoester.database.entities.SrsStateTypeConverter
+import dev.konathankoester.database.entities.StringListTypeConverter
 import dev.konathankoester.database.entities.UserWordEntity
 import dev.konathankoester.database.entities.VerbFormConverter
 import dev.konathankoester.database.entities.WordEntity
@@ -25,7 +26,8 @@ import dev.konathankoester.database.entities.WordSenseStatusConverter
 @TypeConverters(
     VerbFormConverter::class,
     WordSenseStatusConverter::class,
-    SrsStateTypeConverter::class
+    SrsStateTypeConverter::class,
+    StringListTypeConverter::class
 )
 abstract class ShadeSphereDatabase : RoomDatabase() {
 

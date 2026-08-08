@@ -15,7 +15,6 @@ kotlin {
 }
 dependencies {
     implementation(libs.kotlinx.coroutines.core)
-    implementation("ch.qos.logback:logback-classic:1.5.6")
     implementation("io.ktor:ktor-client-okhttp:3.5.2")
     implementation("io.ktor:ktor-client-content-negotiation:3.5.2")
     implementation("io.ktor:ktor-serialization-kotlinx-json:3.5.2")

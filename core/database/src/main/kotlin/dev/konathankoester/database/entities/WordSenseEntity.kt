@@ -4,6 +4,10 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverter
+import kotlinx.serialization.builtins.ListSerializer
+import kotlinx.serialization.builtins.serializer
+import kotlinx.serialization.json.Json
 
 @Entity(
     tableName = "word_sense",
@@ -33,3 +37,14 @@ data class WordSenseEntity(
     val status: WordSenseStatus,
     val generatedAt: Long?,
 )
+
+internal class StringListTypeConverter {
+
+    @TypeConverter
+    fun strListToStr(value: List<String>) =
+        value.let { Json.encodeToString(ListSerializer(String.serializer()), it) }
+
+    @TypeConverter
+    fun strToStrList(str: String?): List<String> =
+        str?.let { Json.decodeFromString(ListSerializer(String.serializer()), it) } ?: emptyList()
+}
