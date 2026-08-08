@@ -9,7 +9,8 @@ val databaseModule = module {
         ShadeSphereDatabase.getAppDatabase(applicationContext = get())
     }
 
-    single {
-        get<ShadeSphereDatabase>().wordSenseDao()
-    }
+    single { get<ShadeSphereDatabase>().wordSenseDao() }
+    single { get<ShadeSphereDatabase>().wordDao() }
+    single { get<ShadeSphereDatabase>().highlightDao() }
+    single { get<ShadeSphereDatabase>().userWordDao() }
 }

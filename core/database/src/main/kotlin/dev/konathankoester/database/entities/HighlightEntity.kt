@@ -3,6 +3,7 @@ package dev.konathankoester.database.entities
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
+import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "highlight",
@@ -17,6 +18,7 @@ import androidx.room.Index
     indices = [Index("wordId")]
 )
 data class HighlightEntity(
+    @PrimaryKey
     val id: String,
     val wordId: String,
     val sourceSentence: String,

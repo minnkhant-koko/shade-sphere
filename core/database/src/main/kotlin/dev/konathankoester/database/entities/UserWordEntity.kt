@@ -3,6 +3,7 @@ package dev.konathankoester.database.entities
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
+import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
 
 enum class SrsState { NEW, LEARNING, REVIEWING, MASTERED }
@@ -20,6 +21,7 @@ enum class SrsState { NEW, LEARNING, REVIEWING, MASTERED }
     indices = [Index(value = ["wordId"], unique = true)]
 )
 data class UserWordEntity(
+    @PrimaryKey
     val id: String,
     val wordId: String,
     val firstAddedAt: Long,

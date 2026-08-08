@@ -11,8 +11,14 @@ interface WordSenseDao {
     @Query("SELECT * FROM word_sense")
     fun get(): Flow<List<WordSenseEntity>>
 
+    @Query("SELECT * FROM word_sense WHERE wordId = :wordId LIMIT 1")
+    suspend fun getByWordId(wordId: String): WordSenseEntity?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(entities: List<WordSenseEntity>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(entity: WordSenseEntity)
 
     @Query("DELETE FROM word_sense")
     suspend fun clear()

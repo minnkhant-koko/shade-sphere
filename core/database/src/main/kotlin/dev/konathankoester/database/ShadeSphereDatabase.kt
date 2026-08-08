@@ -5,6 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import dev.konathankoester.database.dao.HighlightDao
+import dev.konathankoester.database.dao.UserWordDao
+import dev.konathankoester.database.dao.WordDao
 import dev.konathankoester.database.dao.WordSenseDao
 import dev.konathankoester.database.entities.HighlightEntity
 import dev.konathankoester.database.entities.SrsStateTypeConverter
@@ -27,6 +30,9 @@ import dev.konathankoester.database.entities.WordSenseStatusConverter
 abstract class ShadeSphereDatabase : RoomDatabase() {
 
     abstract fun wordSenseDao(): WordSenseDao
+    abstract fun wordDao(): WordDao
+    abstract fun highlightDao(): HighlightDao
+    abstract fun userWordDao(): UserWordDao
 
     companion object {
         fun getAppDatabase(applicationContext: Context) = Room.databaseBuilder(
