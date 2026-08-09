@@ -5,3 +5,7 @@ plugins {
 android {
     namespace = "dev.konathankoester.shade_sphere.feature.reader"
 }
+
+dependencies {
+    implementation(projects.core.design)
+}

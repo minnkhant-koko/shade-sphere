@@ -1,0 +1,9 @@
+dev.konathankoester.design-pngs-0 /Users/min/AndroidStudioProjects/shadesphere/core/design/build/generated/res/pngs/debug
+dev.konathankoester.design-updated_navigation_xml-1 /Users/min/AndroidStudioProjects/shadesphere/core/design/build/generated/updated_navigation_xml/debug
+dev.konathankoester.design-mergeDebugResources-2 /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+dev.konathankoester.design-mergeDebugResources-3 /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+dev.konathankoester.design-debug-4 /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/merged_res/debug/mergeDebugResources
+dev.konathankoester.design-debug-5 /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/packaged_res/debug/packageDebugResources
+dev.konathankoester.design-debug-6 /Users/min/AndroidStudioProjects/shadesphere/core/design/src/debug/res
+dev.konathankoester.design-main-7 /Users/min/AndroidStudioProjects/shadesphere/core/design/src/main/res
+gradleHome-0 /Users/min/.gradle

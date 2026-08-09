@@ -17,5 +17,5 @@ val repositoryModule = module {
 val diModules = listOf(
     geminiModule,
     databaseModule,
-    repositoryModule
+    repositoryModule,
 )

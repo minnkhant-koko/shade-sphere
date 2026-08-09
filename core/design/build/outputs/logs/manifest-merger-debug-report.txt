@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4674179959996201845.xml:2:13-83
+INJECTED from /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4674179959996201845.xml:2:13-83
+	package
+		INJECTED from /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4674179959996201845.xml
+	xmlns:android
+		ADDED from /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4674179959996201845.xml:2:23-81
+uses-sdk
+INJECTED from /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4674179959996201845.xml reason: use-sdk injection requested
+INJECTED from /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4674179959996201845.xml
+INJECTED from /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4674179959996201845.xml
+	android:targetSdkVersion
+		INJECTED from /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4674179959996201845.xml
+	android:minSdkVersion
+		INJECTED from /Users/min/AndroidStudioProjects/shadesphere/core/design/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4674179959996201845.xml
